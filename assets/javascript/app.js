@@ -1,15 +1,15 @@
 $(document).ready(function(){
   //Initial array of topics....................................................
-  var topics = ["Alligator", "Baboon", "Cheetah", "Dolphin", "Elephant"];
+  var topics = ["Casper", "Donald Duck", "Daffy Duck", "Smurf", "Popeye", "Tweety"];
   console.log(topics);
   //Generic function for capturing the image from the data attribute
   //function for displaying image data
   function imageDisplay(){
     $("#imageDisplay").empty();
-    var animal = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10&offset=0";
+    var cartoon = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cartoon + "&api_key=dc6zaTOxFJmzC&limit=10&offset=0";
 
-    //Creating an AJAX call for the specific animal being clicked.
+    //Creating an AJAX call for the specific cartoon being clicked.
     $.ajax({
       url : queryURL,
       method : "GET"
@@ -19,16 +19,16 @@ $(document).ready(function(){
       console.log(response);
       var result = response.data;
       console.log(result);
-      //Creating a div to hold the animal images..................
-      var animalDiv = $("<div class = 'animal_image' dataState = 'still'>");
-      console.log(animalDiv);
+      //Creating a div to hold the cartoon images..................
+      var cartoonDiv = $("<div class = 'cartoon_image' dataState = 'still'>");
+      console.log(cartoonDiv);
       for (var i = 0; i < result.length; i++){
         console.log(i);
         var rating = result[i].rating;
         if (rating !== "r" && rating !== "pg-13") {
           var p = $("<p>").text("Rating: " + rating.toUpperCase());
           console.log(p);
-          animalDiv.append(p);
+          cartoonDiv.append(p);
           //Retrieving the URL for the image data...............
           var imageStill = result[i].images.fixed_height_still.url;
           console.log(imageStill);
@@ -44,10 +44,10 @@ $(document).ready(function(){
           //Passing the imageStill data to dataStill attribute...............
           image.attr({"dataStill" : imageStill});
           console.log(image);
-          //Appending the image to the animalDiv in HTML............
-          animalDiv.append(image);
-          //Prepending the animalDiv to the previous animal image.............
-          $("#imageDisplay").append(animalDiv);
+          //Appending the image to the cartoonDiv in HTML............
+          cartoonDiv.append(image);
+          //Prepending the cartoonDiv to the previous cartoon image.............
+          $("#imageDisplay").append(cartoonDiv);
         }
       }
 
@@ -67,14 +67,14 @@ $(document).ready(function(){
     });
   }
 
-  //Function for the button when clicked will display the animal datas............
+  //Function for the Enter button when clicked will add the name in the textbox in the topics array............
   function addButton() {
-      //Deleting the topics prior to adding new animal images...................
+      //Deleting the topics prior to adding new cartoon images...................
       $("#buttons-view").empty();
 
       //Creating a loop for the topics array ......................
       for(var i = 0; i < topics.length; i++){
-        //Dynamically generating buttons for each animal in the array.............
+        //Dynamically generating buttons for each cartoon in the array.............
         var a = $("<button>");
         //Adding a class to the button................
         a.addClass("image-btn");
@@ -87,17 +87,19 @@ $(document).ready(function(){
       }
   }
 
-  //This function accepts the animal name input from the textbox with the click of the button abd adds to the array..............
+  //This function accepts the cartoon name input from the textbox with the click of the button abd adds to the array..............
   $("#addImage").on("click", function(event) {
       event.preventDefault();
       //Here the input form the textbox is grabbed.............
-      var animalName = $("#imageInput").val().trim();
-      if (animalName === "") {
-        alert("Please enter an Animal name and click on enter button!");
-      } else
-      //The animal name retrieved is pushed to the animal array.............
-      topics.push(animalName);
-      //The addButton function is called to handle the processing of the animal array...........
+      var cartoonName = $("#imageInput").val().trim();
+      if (cartoonName === "") {
+        alert("Please enter a Cartoon Character name and click on enter button!");
+      } else {
+      //The cartoon name retrieved is pushed to the cartoon array.............
+      topics.push(cartoonName);
+      imageInput = "";
+      }
+      //The addButton function is called to handle the processing of the cartoon array...........
       addButton();
   });
 

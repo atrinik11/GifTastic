@@ -1,5 +1,12 @@
 body{
-background : url("../images/jungle.jpg") no-repeat center center fixed;
+  margin : 10px;
+  padding : 20px;
+  background : url("../images/butterfly.jpg") no-repeat;
+  background-size:100%;
+  border : solid;
+  border-width : thick;
+  border-radius : 10px;
+  border-color: #6600cc;
 }
 
 .row{
@@ -16,7 +23,7 @@ background : url("../images/jungle.jpg") no-repeat center center fixed;
   font-size: 45px;
   font-family: cursive;
   font-weight: bold;
-  color: red;
+  color: #6600cc;
   text-align: center;
 }
 
@@ -25,14 +32,14 @@ background : url("../images/jungle.jpg") no-repeat center center fixed;
   padding : 10px;
 }
 
-.animal_image { float : left; }
+.cartoon_image { float : left; }
 
 .picture, p{
   float : left;
   margin: auto;
   padding : 5px;
-  color:red;
-  font-size: 15px;
+  color:#6600cc;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -41,10 +48,14 @@ background : url("../images/jungle.jpg") no-repeat center center fixed;
   margin : 2px;
   border : none;
   background-color: transparent;
-  color: red;
+  color: #6600cc;
   font-size : 25px;
   font-style: oblique;
   font-weight: bold;
   cursor : pointer;
   float : right;
+}
+#imageInput{
+  background-color : transparent;
+  color : #6600cc;
 }
