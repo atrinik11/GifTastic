@@ -1,0 +1,50 @@
+body{
+background : url("../images/jungle.jpg") no-repeat center center fixed;
+}
+
+.row{
+  margin : auto;
+  padding : 20px;
+}
+
+.row h1{
+  margin : auto;
+  margin-bottom : 0;
+  margin-top : 10px;
+  padding : 10px;
+  background: none;
+  font-size: 45px;
+  font-family: cursive;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+#imageDisplay{
+  margin : auto;
+  padding : 10px;
+}
+
+.animal_image { float : left; }
+
+.picture, p{
+  float : left;
+  margin: auto;
+  padding : 5px;
+  color:red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#imageForm, .image-btn, #addImage{
+  padding: 5px 5px;
+  margin : 2px;
+  border : none;
+  background-color: transparent;
+  color: red;
+  font-size : 25px;
+  font-style: oblique;
+  font-weight: bold;
+  cursor : pointer;
+  float : right;
+}
