@@ -55,6 +55,12 @@ body{
   cursor : pointer;
   float : right;
 }
+.image-btn {
+  float : left;
+  border : solid;
+  border-radius : 10px;
+  background-color: #ffccff;
+}
 #imageInput{
   background-color : transparent;
   color : #6600cc;
