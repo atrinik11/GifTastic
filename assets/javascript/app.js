@@ -1,6 +1,6 @@
 $(document).ready(function(){
   //Initial array of topics....................................................
-  var topics = ["Casper", "Donald Duck", "Daffy Duck", "Smurf", "Popeye", "Tweety"];
+  var topics = ["CASPER", "DONALD DUCK", "DAFFY DUCK", "SMURF", "POPEYE", "TWEETY"];
   console.log(topics);
   //Generic function for capturing the image from the data attribute
   //function for displaying image data
@@ -20,7 +20,7 @@ $(document).ready(function(){
       var result = response.data;
       console.log(result);
       //Creating a div to hold the cartoon images..................
-      var cartoonDiv = $("<div class = 'cartoon_image' dataState = 'still'>");
+      var cartoonDiv = $("<div class = 'clearfix' dataState = 'still'>");
       console.log(cartoonDiv);
       for (var i = 0; i < result.length; i++){
         console.log(i);
@@ -91,7 +91,7 @@ $(document).ready(function(){
   $("#addImage").on("click", function(event) {
       event.preventDefault();
       //Here the input form the textbox is grabbed.............
-      var cartoonName = $("#imageInput").val().trim();
+      var cartoonName = $("#imageInput").val().trim().toUpperCase();
       if (cartoonName === "") {
         alert("Please enter a Cartoon Character name and click on enter button!");
       } else {
@@ -103,7 +103,7 @@ $(document).ready(function(){
       addButton();
   });
 
-  //Adding a click event listner to all elements with the class of image-btn.......
+  //Adding a click event listner to all elements with the class of image-btn, and calling the imageDisplay function.......
   $(document).on("click", ".image-btn", imageDisplay);
   addButton();
 });

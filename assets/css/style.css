@@ -1,8 +1,9 @@
 body{
   margin : 10px;
   padding : 20px;
+  height : auto;
   background : url("../images/butterfly.jpg") no-repeat;
-  background-size:100%;
+  background-size : 100%;
   border : solid;
   border-width : thick;
   border-radius : 10px;
@@ -32,18 +33,32 @@ body{
   padding : 10px;
 }
 
-.cartoon_image { float : left; }
+/*.cartoon_image { float : left; }*/
 
-.picture, p{
+p{
   float : left;
-  margin: auto;
-  padding : 5px;
-  color:#6600cc;
+  color: #6600cc;
   font-size: 25px;
   font-weight: bold;
 }
 
-#imageForm, .image-btn, #addImage{
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.picture{
+  /*clear : both;*/
+  float : left;
+  margin: 5px;
+  padding : 5px;
+  border : solid;
+  border-width : 5px;
+  border-color : #6600cc;
+  border-radius: 5px;
+}
+
+#imageForm, .image-btn, #addImage, .btn-default, a{
   padding: 5px 5px;
   margin : 2px;
   border : none;
@@ -53,6 +68,10 @@ body{
   font-style: oblique;
   font-weight: bold;
   cursor : pointer;
+}
+a:visited {color:#6600cc;}
+
+#imageForm, .image-btn, #addImage{
   float : right;
 }
 .image-btn {
