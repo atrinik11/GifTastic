@@ -44,11 +44,9 @@ p{
 .clearfix:before, .clearfix:after {
     content: "";
     display: table;
+    clear : both;
 }
 
-.clearfix:before{
-  clear : both;
-}
 .picture{
   margin: 5px;
   padding : 5px;
