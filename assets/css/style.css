@@ -33,7 +33,6 @@ body{
   padding : 10px;
 }
 
-/*.cartoon_image { float : left; }*/
 
 p{
   color: #6600cc;
@@ -51,8 +50,6 @@ p{
   clear : both;
 }
 .picture{
-  clear : both;
-  float : left;
   margin: 5px;
   padding : 5px;
   border : solid;
