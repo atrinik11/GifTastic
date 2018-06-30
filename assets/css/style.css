@@ -36,19 +36,22 @@ body{
 /*.cartoon_image { float : left; }*/
 
 p{
-  float : left;
   color: #6600cc;
   font-size: 25px;
   font-weight: bold;
+  text-align: center;
 }
 
-.clearfix::after {
+.clearfix:before, .clearfix:after {
     content: "";
-    clear: both;
     display: table;
 }
+
+.clearfix:before{
+  clear : both;
+}
 .picture{
-  /*clear : both;*/
+  clear : both;
   float : left;
   margin: 5px;
   padding : 5px;
@@ -56,6 +59,10 @@ p{
   border-width : 5px;
   border-color : #6600cc;
   border-radius: 5px;
+}
+
+.cartoon {
+  float : left;
 }
 
 #imageForm, .image-btn, #addImage, .btn-default, a{

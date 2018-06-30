@@ -20,10 +20,10 @@ $(document).ready(function(){
       var result = response.data;
       console.log(result);
       //Creating a div to hold the cartoon images..................
-      var cartoonDiv = $("<div class = 'clearfix' dataState = 'still'>");
       console.log(cartoonDiv);
       for (var i = 0; i < result.length; i++){
         console.log(i);
+        var cartoonDiv = $("<div  class = 'cartoon clearfix' dataState = 'still'>");
         var rating = result[i].rating;
         if (rating !== "r" && rating !== "pg-13") {
           var p = $("<p>").text("Rating: " + rating.toUpperCase());
